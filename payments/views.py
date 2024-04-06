@@ -1,14 +1,10 @@
 from django.shortcuts import render
 from .serializers import TransactionSerializer, PaymentSerializer
-from rest_framework.response import Response
+from rest_framework.viewsets import ModelViewSet
+from users.models import User
+from .models import Transaction
 
-
-# Create your views here.
-def make_payments(request):
-
-
-    if request.method == "POST":
-        transaction = TransactionSerializer(request.DATA)
-
-
-    return 
+class TransactionViewset(ModelViewSet):
+    
+    queryset = Transaction.objects.all()
+    serializer_class = TransactionSerializer

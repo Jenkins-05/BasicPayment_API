@@ -40,7 +40,12 @@ INSTALLED_APPS = [
     'users',
     'payments',
     'rest_framework',
-    
+    'rest_framework.authtoken',
+    'allauth', 
+    'allauth.account', 
+    'allauth.socialaccount',
+    'dj_rest_auth.registration',
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
@@ -127,6 +132,21 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 AUTH_USER_MODEL = 'users.User'
+CORS_ALLOW_CREDENTIALS = True
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:5173",
+    "http://127.0.0.1:5173",
+]
+
+CORS_ALLOW_ALL_ORIGINS = True
+CORS_ALLOWED_HEADERS = [
+    "GET",
+    "HEAD",
+    "OPTIONS",
+    "PUT",
+    "DELETE",
+    "POST"
+]
 
 
 REST_FRAMEWORK = {
@@ -149,7 +169,6 @@ ACCOUNT_LOGOUT_ON_GET = True
 ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_AUTHENTICATION_METHOD = "email"
 ACCOUNT_EMAIL_VERIFICATION = "none"
-ACCOUNT_USER_MODEL_USERNAME_FIELD = "student_id"
 
 SITE_ID = 1
 

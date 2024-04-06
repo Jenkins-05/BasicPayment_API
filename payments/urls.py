@@ -1,6 +1,8 @@
 from django.urls import path
-from .views import make_payments
+from rest_framework.routers import SimpleRouter
+from .views import TransactionViewset
 
-urlpatterns = [
-    path("", make_payments),
-]   
+router = SimpleRouter()
+router.register(r'', TransactionViewset)
+
+urlpatterns = router.urls
