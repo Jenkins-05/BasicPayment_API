@@ -1,3 +1,15 @@
 from rest_framework.serializers import ModelSerializer
+from .models import PaymentMethod, Transaction
 
-from
+class PaymentSerializer(ModelSerializer):
+    class Meta:
+        model = PaymentMethod
+        exclude = ["id", "transaction"]
+
+
+class TransactionSerializer(ModelSerializer):
+    payment_method = PaymentSerializer()
+
+    class Meta:
+        model = Transaction
+        exclude = ["id"]

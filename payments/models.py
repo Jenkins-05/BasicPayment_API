@@ -1,5 +1,5 @@
 from django.db import models
-from users.models import Account
+from users.models import User
 
 
 # Create your models here.
@@ -13,7 +13,7 @@ class Transaction(models.Model):
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
 
-    users = models.ForeignKey(Account, related_name="transactions", on_delete=models.CASCADE)
+    users = models.ForeignKey(User, related_name="transactions", on_delete=models.CASCADE)
 
 class PaymentMethod(models.Model):
     PAYMENT_METHOD = (
