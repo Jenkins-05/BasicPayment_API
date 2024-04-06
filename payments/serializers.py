@@ -4,7 +4,7 @@ from .models import PaymentMethod, Transaction
 class PaymentSerializer(ModelSerializer):
     class Meta:
         model = PaymentMethod
-        exclude = ["id", "transaction"]
+        exclude = ["id"]
 
 
 class TransactionSerializer(ModelSerializer):
@@ -12,4 +12,4 @@ class TransactionSerializer(ModelSerializer):
 
     class Meta:
         model = Transaction
-        exclude = ["id"]
+        exclude = ["id", "user", "status"]
