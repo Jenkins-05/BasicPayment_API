@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Login</title>
+    <link rel="stylesheet" href="styles.css" />
+    <!-- Link to your CSS file for styling -->
+  </head>
+  <body>
+    <!--Menu Section-->
+
+    <header class="header">
+      <h1>User Login</h1>
+      <!-- Placeholder for user registration -->
+    </header>
+
+    <section class="main-content">
+      <form action="login.php" method="post">
+        <label for="username_or_email">Username or Email:</label><br />
+        <input
+          type="text"
+          id="username_or_email"
+          name="username_or_email"
+          required
+        /><br /><br />
+        <label for="password">Password:</label><br />
+        <input
+          type="password"
+          id="password"
+          name="password"
+          required
+        /><br /><br />
+        <input type="submit" value="Login" />
+        <button onclick="window.location.href = 'register.html';">register</button>
+</body>
+      </form>
+    </section>
+  </body>
+</html>
