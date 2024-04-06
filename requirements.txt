@@ -5,7 +5,7 @@ charset-normalizer==3.3.2
 cryptography==41.0.7
 defusedxml==0.7.1
 dj-rest-auth==5.0.2
-Django
+Django==5.0.4
 django-allauth==0.57.0
 django-cors-headers==4.3.1
 django-filter==23.4
