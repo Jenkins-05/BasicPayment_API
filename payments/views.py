@@ -10,5 +10,5 @@ class TransactionViewset(ModelViewSet):
 
     def get_queryset(self):
         queryset = self.queryset
-        query_set = queryset.filter(user=self.request.user)
+        query_set = queryset.filter(user=self.request.user.id)
         return query_set
