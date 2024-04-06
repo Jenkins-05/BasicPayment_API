@@ -22,5 +22,6 @@ class CustomUserManager(BaseUserManager):
 
         return self.create_user(username, email, password, **extra_fields)
 
+
 class Account(AbstractUser):
     ...
